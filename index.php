@@ -10,6 +10,9 @@
 
     <?php
     require_once("models/product.php");
+    require_once("models/toy.php");
+    require_once("models/kennels.php");
+    require_once("models/food.php");
     require_once("db.php");
     ?>
 </head>
@@ -19,7 +22,7 @@
         <?php
         foreach ($products as $product) {
 
-            echo $product->getFullProducts();
+            echo "<div class=card>" . $product->getFullProducts() . "</div>";
         }
         ?>
     </div>

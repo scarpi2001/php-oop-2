@@ -19,10 +19,10 @@ class Product
     public function getFullProducts()
     {
 
-        return "<div class='card'> <h1>" . $this->name . "</h1>"
+        return "<h1>" . $this->name . "</h1>"
             . "<h2> animale: " . $this->animal . "</h2>"
             . "<h2> tipo di articolo: " . $this->type . "</h2>"
-            . "<h4> Prezzo: €" . $this->price . "</h4> </div>";
+            . "<h4> Prezzo: €" . $this->price . "</h4>";
     }
 
 }
