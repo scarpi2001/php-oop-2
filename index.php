@@ -1,43 +1,25 @@
-<?php
-class Product
-{
+<!DOCTYPE html>
+<html lang="en">
 
-    public $name;
-    public $animal;
-    public $type;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cani e gatti shop</title>
 
-    public function __construct($name, $animal, $type)
-    {
-        $this->name = $name;
-        $this->animal = $animal;
-        $this->type = $type;
+    <?php
+    require_once("models/product.php");
+    require_once("db.php");
+    ?>
+</head>
+
+<body>
+    <?php
+    foreach ($products as $product) {
+
+        echo $product->getFullProducts();
     }
+    ?>
+</body>
 
-    public function getFullProducts()
-    {
-
-        return "
-            <div>
-
-            <h1> name: " . $this->name . "</h1>"
-            . "<h2> animal: " . $this->animal . "</h2>"
-            . "<h2> type: " . $this->type . "</h2> 
-            
-            </div>
-            
-            ";
-
-    }
-
-}
-
-$products = [
-    new Product("Crocchette Carne Mix", "cani", "mangime"),
-    new Product("Crocchette Pesce Mix", "gatti", "mangime")
-];
-
-foreach ($products as $product) {
-
-    echo $product->getFullProducts();
-}
-?>
+</html>
